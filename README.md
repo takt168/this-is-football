@@ -32,7 +32,8 @@ This project is an app for any fan of club football (aka soccer).  It's not just
 The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that allows developers to easily consume sports league  data in JSON format.  The free API gives you all features except for vidoes and live scoring.  It also limits your result set to 250.
 
 ## Wireframes
-<!-- https://wireframe.cc/Rlq1Lt -->
+[https://wireframe.cc/Rlq1Lt](https://wireframe.cc/Rlq1Lt)
+
 ![wireframe](./wireframe.pdf)
 
 ## MVP/PostMVP
@@ -47,8 +48,9 @@ The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that
 
 
 ###PostMVP
-* Add videos content.  Sports DB API only provides videos for paid subsribers, so hit a second API and pull back relevent videos based on the page they are on.
 * Hamburger menu
+* Embed social links on page.
+* Add videos content.  Sports DB API only provides videos for paid subsribers, so hit a second API and pull back relevent videos based on the page they are on.
 * Explore possibility of an interactive map to select country and club from home page instead of dropdown list.
 
 
