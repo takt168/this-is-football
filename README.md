@@ -34,7 +34,7 @@ The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that
 ## Wireframes
 [https://wireframe.cc/Rlq1Lt](https://wireframe.cc/Rlq1Lt)
 
-![wireframe](./wireframe.pdf)
+![wireframe](wireframe.pdf)
 
 ## MVP/PostMVP
 
