@@ -1,8 +1,8 @@
 # This Is Football
 
-### The beautiful game?!?
+### The beautiful game?
 
-![Alt Text](https://media.giphy.com/media/66VEis0ghRSQE/giphy.gif)
+![Alt Text](https://media.giphy.com/media/n6M0c7PI8JyM/giphy.gif)
 
 
 # Project Overview
