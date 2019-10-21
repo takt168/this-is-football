@@ -2,7 +2,7 @@
 
 ### The beautiful game?
 
-![Dino football](http://i.imgur.com/fCb7t8c.gif)
+![Dino football](https://media.giphy.com/media/cHSVgQ3WhUPTi/giphy.gif)
 
 
 # Project Overview
