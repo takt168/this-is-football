@@ -55,15 +55,17 @@ The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that
 
 
 ## React Component Hierarchy
-
+```
 <App />
     <Header />
     <main>
-      <League />  //page with select league
-      <Club />  //page with selected club
-      <Player />  //page with select player 
+      <Schedule /> //page with schedule info
+      <League />   //page with select league
+      <Club />     //page with selected club
+      <Player />   //page with select player 
     </main>    
     <Footer />
+```
 
 ## Functional Components
 ##### Writing out your components and it's descriptions isn't a required part of the proposal but can be helpful.

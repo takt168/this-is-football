@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding:0;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+body {
+  height: 90vh;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #56b000;
+}
+
+#header-img {
+  height: 75px;
+  width: 100px;
+  padding-left: 6%;
+}
+header img {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+}
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  font-size: 3em;
+  text-align: center;
+  font-weight: bolder;
+  width: 100%;
+  padding-right: 6%;
+}
+
+.app {
+  background-color: gray;
+}
+.app img {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+
+}
+
+.small-logo {
+  margin: 5px 5px;
+  width: 9%;
+
+}
+
+.league img {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+
+}
+
+section {
+  background-color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1%;
+
+}
