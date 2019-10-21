@@ -1,16 +1,8 @@
 # This Is Football
 
-### The beautiful game?
+### The beautiful game?!?
 
-![Alt Text](https://media.giphy.com/media/jx4ZHQHKYV0JP7wJYk/giphy.gif)
-
-### The best athletes in the world?
-
-![Alt Text](https://media.giphy.com/media/GxxyExmvyzkze/giphy.gif)
-
-### A father passing on the love of the game to his son
-
-![Alt Text](https://media.giphy.com/media/p3cgmVTX2kcdV3GUUj/giphy.gif)
+![Alt Text](https://media.giphy.com/media/66VEis0ghRSQE/giphy.gif)
 
 
 # Project Overview
