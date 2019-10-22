@@ -74,3 +74,56 @@ footer {
   text-align: center;
   background-color: #56b000;
 }
+
+.matches-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.match-table-item {
+  border: 1px solild white;
+}
+
+.league-prev-matches-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 20px 20px 1fr;
+}
+.league-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.id-section {
+  display:flex;
+}
+
+.id-section img {
+  width: 25%;
+  margin: 0 10%;
+}
+
+.info-section {
+  display: block;
+}
+
+.player-img {
+  width: 25%;
+  margin: 20px;
+}
+.player-card {
+display: flex;
+margin: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.social-logo-div {
+  height: 30px;
+  width: 30px;
+}
+.player-section, #club-section, #league-section {
+  min-height: 98vh;
+}
+
