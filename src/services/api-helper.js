@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { formatDate, tomorrowsDate, saturdayDate, sundayDate } from './date-helper';
 
 export const getAllFootballLeagues = async () => {
   const response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer");
@@ -12,6 +13,33 @@ export const getAllFootballLeagues = async () => {
   console.log(newArray.length);
 
   return newArray;
+}
+
+export const getTodaysGames = async () => {
+  console.log("In getTodaysGames()");
+  return await getGamesByDate(formatDate(new Date()));
+}
+
+export const getTomorrowsGames = async () => {
+  console.log("In getTomorrowsGames()" + formatDate(tomorrowsDate()));
+  return await getGamesByDate(formatDate(tomorrowsDate()));
+}
+
+export const getSaturdayGames = async () => {
+  console.log("In getSaturdayGames()" + formatDate(saturdayDate()));
+  return await getGamesByDate(formatDate(saturdayDate()));
+}
+
+export const getSundayGames = async () => {
+  console.log("In getSundayGames()" + formatDate(sundayDate()));
+  return await getGamesByDate(formatDate(sundayDate()));
+}
+
+export const getGamesByDate = async (date) => {
+  //dateformat for API call is yyyy-mm-dd
+  const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventsday.php?d=${date}&s=Soccer`);
+  console.log(response.data.events);
+  return response.data.events;
 }
 
 export const getLeagueData = async (idLeague) => {
@@ -43,9 +71,6 @@ export const getLeagueTable = async (idLeague) => {
   console.log(response.data.table);
   return response.data.table;
 }
-
-
-
 
 export const getClubData = async (idTeam) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`);

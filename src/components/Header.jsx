@@ -9,7 +9,7 @@ export default function Header(props) {
     <header>
 
       {props.page === "home" ? <div></div> : <Link to="/"><div id="header-img"><img src={soccerBall} alt="ball"></img></div></Link>}
-      <h1>This is Football</h1>
+      <h1>Club Football Central</h1>
     </header>
   );
 }

@@ -41,44 +41,54 @@ export default class League extends React.Component {
   render() {
     return (
 
+      <>
+        <img src={this.state.leagueData.strBanner} alt={this.state.leagueData.strLeague} />
+        {(this.state.leagueData.strBanner === null && <h1>{this.state.leagueData.strLeague}</h1>)}
 
-      <section name="league-section">
-
-        <h1>Last 15</h1>
-        {this.state.lastGames.map(game => (
-          <div className="event-detail" key={game.idEvent}>
-            <h3>{game.strEvent}</h3>
-            <h3>{game.dateEvent}</h3>
-          </div>
-        ))}
-
-        <h1>Next 15</h1>
-        {this.state.nextGames.map(game => (
-          <div className="event-detail" key={game.idEvent}>
-            <h3>{game.strEvent}</h3>
-            <h3>{game.dateEvent}</h3>
-          </div>
-        ))}
-
-        <h1>League Table</h1>
-        {this.state.table.map(team => (
-          <div className="event-detail" key={team.teamid}>
-            <h3>{team.name}</h3>
-            <h3>{team.total}</h3>
-          </div>
-        ))}
-
-        {this.state.clubs.map(club => (
-          <div className="small-logo" key={club.idTeam}>
-            <div className="logo-div">
+        <section id="club-logo-section">
+          {this.state.clubs.map(club => (
+            <div className="small-logo" key={club.idTeam}>
               <Link to={`/Club/${club.idTeam}`}>
                 <img src={club.strTeamBadge} alt={club.strTeam} />
               </Link>
             </div>
-          </div>
-        ))}
+          ))}
+        </section>
 
-      </section>
+        <section>
+          <h1>Last 15</h1>
+          {
+            this.state.lastGames.map(game => (
+              <div className="event-detail" key={game.idEvent}>
+                <p>{game.strEvent}</p>
+                <p>{game.dateEvent}</p>
+              </div>
+            ))
+          }
+
+          <h1>Next 15</h1>
+          {
+            this.state.nextGames.map(game => (
+              <div className="event-detail" key={game.idEvent}>
+                <p>{game.strEvent}</p>
+                <p>{game.dateEvent}</p>
+              </div>
+            ))
+          }
+
+          <h1>League Table</h1>
+          {
+            this.state.table.map(team => (
+              <div className="event-detail" key={team.teamid}>
+                <p>{team.name}</p>
+                <p>{team.total}</p>
+              </div>
+            ))
+          }
+
+
+        </section >
+      </>
     );
   };
 }

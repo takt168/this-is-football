@@ -39,36 +39,37 @@ export default class Club extends React.Component {
     return (
 
 
-      <section name="club-section">
+      <section id="club-section">
 
-        <img src={this.state.clubData.strTeamBadge} alt={this.state.clubData.strTeam} />
+        <img id="club-crest" src={this.state.clubData.strTeamBadge} alt={this.state.clubData.strTeam} />
 
 
         <h1>Last 5</h1>
         {this.state.lastGames.map(game => (
           <div className="event-detail" key={game.idEvent}>
-            <h3>{game.strEvent}</h3>
-            <h3>{game.dateEvent}</h3>
+            <p>{game.strEvent}</p>
+            <p>{game.dateEvent}</p>
           </div>
         ))}
 
         <h1>Next 5</h1>
         {this.state.nextGames.map(game => (
           <div className="event-detail" key={game.idEvent}>
-            <h3>{game.strEvent}</h3>
-            <h3>{game.dateEvent}</h3>
+            <p>{game.strEvent}</p>
+            <p>{game.dateEvent}</p>
           </div>
         ))}
 
-        {this.state.players.map(player => (
-          <div className="small-logo" key={player.idPlayer}>
-            <div className="logo-div">
+        <h1>Featured Players:</h1>
+        <section id="player-card-section">
+          {this.state.players.map(player => (
+            <div className="small-logo" key={player.idPlayer}>
               <Link to={`/Player/${player.idPlayer}`}>
                 <img src={player.strThumb} alt={player.strPlayer} />
               </Link>
             </div>
-          </div>
-        ))}
+          ))}
+        </section>
 
       </section>
     );

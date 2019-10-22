@@ -57,10 +57,20 @@ header h1 {
 
 }
 
-section {
+#main-section-league-logo, #club-logo-section, #player-card-section {
   background-color: gray;
   display: flex;
   flex-wrap: wrap;
   padding: 1%;
+}
 
+#club-crest {
+  height: 33%;
+  width: 33%;
+  object-fit:cover;
+
+}
+footer {
+  text-align: center;
+  background-color: #56b000;
 }

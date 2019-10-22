@@ -8,21 +8,39 @@ import Player from './components/Player';
 import Footer from './components/Footer';
 import { Route } from 'react-router-dom';
 
-import { getAllFootballLeagues } from './services/api-helper';
+import {
+  getAllFootballLeagues, getTodaysGames,
+  getTomorrowsGames,
+  getSaturdayGames,
+  getSundayGames
+} from './services/api-helper';
 
 class App extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      leagues: []
+      leagues: [],
+      todaysGames: [],
+      tomorrowsGames: [],
+      saturdayGames: [],
+      sundayGames: []
     }
   }
 
   componentDidMount = async () => {
     const leagues = await getAllFootballLeagues();
+    const todaysGames = await getTodaysGames();
+    const tomorrowsGames = await getTomorrowsGames();
+    const saturdayGames = await getSaturdayGames();
+    const sundayGames = await getSundayGames();
+
     this.setState({
-      leagues
+      leagues,
+      todaysGames,
+      tomorrowsGames,
+      saturdayGames,
+      sundayGames
     });
   }
 
@@ -35,7 +53,14 @@ class App extends React.Component {
       <div className="app" >
 
         <Header />
-        <Route exact path="/" render={() => (<Main leagues={this.state.leagues} />)} />
+        <Route exact path="/" render={() =>
+          (<Main
+            leagues={this.state.leagues}
+            todaysGames={this.state.todaysGames}
+            tomorrowsGames={this.state.tomorrowsGames}
+            saturdayGames={this.state.saturdayGames}
+            sundayGames={this.state.sundayGames}
+          />)} />
         <Route path="/League/:idLeague" render={(props) => (<League idLeague={props.match.params.idLeague} />)} />
         <Route path="/Club/:idTeam" render={(props) => (<Club idTeam={props.match.params.idTeam} />)} />
         <Route path="/Player/:idPlayer" render={(props) => (<Player idPlayer={props.match.params.idPlayer} />)} />
