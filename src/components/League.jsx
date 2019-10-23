@@ -9,7 +9,6 @@ import {
 import { Link } from 'react-router-dom';
 import Social from './Social';
 
-
 export default class League extends React.Component {
 
 
@@ -49,33 +48,40 @@ export default class League extends React.Component {
 
         <section id="club-logo-section">
           {this.state.clubs && this.state.clubs.map(club => (
-            <div className="small-logo" key={club.idTeam}>
-              <Link to={`/Club/${club.idTeam}`}>
-                <img src={club.strTeamBadge} alt={club.strTeam} />
-              </Link>
+            <div className="player-card-box" key={club.idTeam}>
+
+              <div className="small-logo" >
+                <Link to={`/Club/${club.idTeam}`}>
+                  <img src={club.strTeamBadge} alt={club.strTeam} />
+                  <p className="small-logo-name">{club.strTeam}</p>
+                </Link>
+              </div>
             </div>
           ))}
         </section>
+        <div id="league-info">
 
-        <div>
-          <p><span className="bold-text">League Name: </span>{this.state.leagueData.strLeague}</p>
-        </div>
-        <div>
-          <p><span className="bold-text">Country: </span>{this.state.leagueData.strCountry}</p>
-        </div>
-        <Social
-          strFacebook={this.state.leagueData.strFacebook}
-          strTwitter={this.state.leagueData.strTwitter}
-          strInstagram={this.state.leagueData.strInstagram}
-          strYoutube={this.state.leagueData.strYoutube}
-        />
-        <div>
-          {this.state.leagueData.strDescriptionEN
-            && <p><span className="bold-text">League Bio: </span>{this.state.leagueData.strDescriptionEN}</p>}
+          <div>
+            <p><span className="bold-text">League Name: </span>{this.state.leagueData.strLeague}</p>
+          </div>
+          <div>
+            <p><span className="bold-text">Country: </span>{this.state.leagueData.strCountry}</p>
+          </div>
+          <Social
+            strFacebook={this.state.leagueData.strFacebook}
+            strTwitter={this.state.leagueData.strTwitter}
+            strInstagram={this.state.leagueData.strInstagram}
+            strYoutube={this.state.leagueData.strYoutube}
+          />
+          <div>
+            {this.state.leagueData.strDescriptionEN
+              && <p><span className="bold-text">League Bio: </span>{this.state.leagueData.strDescriptionEN}</p>}
+          </div>
         </div>
 
 
         {this.state.leagueData.idCup === "0" &&
+          this.state.table &&
           <div id="league-table-div">
             <h2>League Table</h2>
             <div className="league-table">
@@ -112,7 +118,7 @@ export default class League extends React.Component {
           {this.state.lastGames
             &&
             <div className="matches-sub-section">
-              <h2>Last 15 League Matches</h2>
+              <h2>Last 15 Matches</h2>
               <div className="league-prev-matches-table">
                 <div className="match-table-header">Date</div>
                 <div className="match-table-header">Home</div>
@@ -131,7 +137,7 @@ export default class League extends React.Component {
           {this.state.nextGames
             &&
             <div className="matches-sub-section">
-              <h2>Next 15 League Matches</h2>
+              <h2>Next 15 Matches</h2>
               <div className="matches-table">
                 <div className="match-table-header">Date</div>
                 <div className="match-table-header">Home</div>

@@ -15,21 +15,21 @@ export default function Social(props) {
         <div className="social-logo-div">
           < a href={"http://" + props.strFacebook}
             target="_blank"
-            rel="noopener noreferrer"><img src={facebook} /></a>
+            rel="noopener noreferrer"><img src={facebook} alt="facebook"/></a>
         </div>
       }
       {props.strTwitter
         &&
         <div className="social-logo-div">
           < a href={"http://" + props.strTwitter}
-            target="_blank" rel="noopener noreferrer"><img src={twitter} /></a>
+            target="_blank" rel="noopener noreferrer"><img src={twitter} alt="twitter"/></a>
         </div>
       }
       {props.strInstagram
         &&
         < div className="social-logo-div">
           <a href={"http://" + props.strInstagram}
-            target="_blank" rel="noopener noreferrer"><img src={instagram} /></a>
+            target="_blank" rel="noopener noreferrer"><img src={instagram} alt="instagram"/></a>
         </div>
       }
 
@@ -38,7 +38,7 @@ export default function Social(props) {
         &&
         <div className="social-logo-div">
           <a href={"http://" + props.strYoutube}
-            target="_blank" rel="noopener noreferrer"><img src={youtube} /></a>
+            target="_blank" rel="noopener noreferrer"><img src={youtube} alt="youtube"/></a>
         </div>
       }
 

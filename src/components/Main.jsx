@@ -4,20 +4,24 @@ import { Link } from 'react-router-dom';
 export default function Main(props) {
 
   return (
-    <>
+    <main>
       <section id="main-section-league-logo">
         {props.leagues.map(league => (
-          <div className="small-logo" key={league.idLeague}>
-            <div className="logo-div">
-              <Link to={`/League/${league.idLeague}`}>
-                <img src={league.strBadge} alt={league.strLeague} />
-              </Link>
+          <div className="player-card-box" key={league.idLeague}>
+            <div className="small-logo" >
+              <div className="logo-div">
+                <Link to={`/League/${league.idLeague}`}>
+                  <img src={league.strBadge} alt={league.strLeague} />
+                  <p className="small-logo-name">{league.strLeague}</p>
+                </Link>
+              </div>
             </div>
           </div>
         ))}
       </section>
       <section className="matches-section">
         <div className="matches-sub-section">
+
 
           <h2> TODAY'S MATCHES</h2>
           <div className="matches-table">
@@ -91,6 +95,6 @@ export default function Main(props) {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

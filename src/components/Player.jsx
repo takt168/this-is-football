@@ -1,8 +1,4 @@
 import React from 'react';
-import facebook from '../../src/facebook.png';
-import twitter from '../../src/twitter.png';
-import instagram from '../../src/instagram.png';
-import youtube from '../../src/youtube.png';
 import { getPlayerData } from '../services/api-helper';
 import Social from './Social';
 
@@ -30,20 +26,24 @@ export default class Player extends React.Component {
         <div className="player-card">
 
           <div className="player-img">
-            <img src={this.state.playerData.strThumb} alt={this.state.playerData.strPlayer} />
+            {this.state.playerData.strCutout
+              ? <img src={this.state.playerData.strCutout} alt="" />
+              : this.state.playerData.strThumb
+                ? <img src={this.state.playerData.strThumb} alt="" />
+                : < img src="https://www.thesun.co.uk/wp-content/uploads/2018/06/NINTCHDBPICT000376001692.jpg" alt="not found" />}
           </div>
           <div className="player-bio">
             <div>
-              <h1>{this.state.playerData.strPlayer}</h1>
+              <h2>{this.state.playerData.strPlayer}</h2>
             </div>
             <div>
-              <p><span className="bold-text">Position: </span>{this.state.playerData.strPosition}</p>
+              <h3><span className="bold-text">Position: </span>{this.state.playerData.strPosition}</h3>
             </div>
             <div>
-              <p><span className="bold-text">Birthplace: </span>{this.state.playerData.strBirthLocation}</p>
+              <h3><span className="bold-text">Birthplace: </span>{this.state.playerData.strBirthLocation}</h3>
             </div>
             <div>
-              <p><span className="bold-text">Nationality: </span>{this.state.playerData.strNationality}</p>
+              <h3><span className="bold-text">Nationality: </span>{this.state.playerData.strNationality}</h3>
             </div>
 
             <Social

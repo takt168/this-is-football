@@ -2,9 +2,24 @@ import axios from 'axios';
 import { formatDate, tomorrowsDate, saturdayDate, sundayDate } from './date-helper';
 
 export const getAllFootballLeagues = async () => {
-  const response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer");
-  const results = response.data.countrys;
+  let response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer");
+  let results = response.data.countrys;
   let newArray = [];
+  //loop through array and remove objects with no badge
+  for (let i = 0; i < results.length; i++) {
+    (results[i].strBadge) && newArray.push(results[i]);
+  }
+
+  // get MLS
+  response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346");
+  results = response.data.leagues;
+  //loop through array and remove objects with no badge
+  for (let i = 0; i < results.length; i++) {
+    (results[i].strBadge) && newArray.push(results[i]);
+  }
+  // get La Liga
+  response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4335");
+  results = response.data.leagues;
   //loop through array and remove objects with no badge
   for (let i = 0; i < results.length; i++) {
     (results[i].strBadge) && newArray.push(results[i]);

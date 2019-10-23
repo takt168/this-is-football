@@ -42,32 +42,35 @@ export default class Club extends React.Component {
 
       <section id="club-section">
 
-        <img src={this.state.clubData.strTeamBanner} alt={this.state.clubData.strTeamBadge} />
-        <Social
-          strFacebook={this.state.clubData.strFacebook}
-          strTwitter={this.state.clubData.strTwitter}
-          strInstagram={this.state.clubData.strInstagram}
-          strYoutube={this.state.clubData.strYoutube}
-        />
-        <div className="id-section">
-          <img src={this.state.clubData.strTeamJersey} alt={this.state.clubData.strTeamJersey} />
-          <div>
+        <div id="club-desc">
+
+          <img src={this.state.clubData.strTeamBanner} alt={this.state.clubData.strTeamBadge} />
+          <Social
+            strFacebook={this.state.clubData.strFacebook}
+            strTwitter={this.state.clubData.strTwitter}
+            strInstagram={this.state.clubData.strInstagram}
+            strYoutube={this.state.clubData.strYoutube}
+          />
+          <div className="id-section">
+            <img src={this.state.clubData.strTeamJersey} alt={this.state.clubData.strTeamJersey} />
             <div>
-              <h3>{this.state.clubData.strTeam}</h3>
-            </div>
-            <div>
-              {this.state.clubData.intFormedYear > 0
-                && < p > Founded: <span className="bold-text">{this.state.clubData.intFormedYear}</span></p>}
-            </div>
-            <div>
-              {this.state.clubData.strStadiumLocation
-                && < p > Location: <span className="bold-text">{this.state.clubData.strStadiumLocation}</span></p>}
-            </div>
-            <div>
-              <p>Country: <span className="bold-text">{this.state.clubData.strCountry}</span></p>
-            </div>
-            <div>
-              <p>Stadium Name: <span className="bold-text">{this.state.clubData.strStadium}</span></p>
+              <div>
+                <h2>{this.state.clubData.strTeam}</h2>
+              </div>
+              <div>
+                {this.state.clubData.intFormedYear > 0
+                  && <h3> Founded: <span className="bold-text">{this.state.clubData.intFormedYear}</span></h3>}
+              </div>
+              <div>
+                {this.state.clubData.strStadiumLocation
+                  && <h3> Location: <span className="bold-text">{this.state.clubData.strStadiumLocation}</span></h3>}
+              </div>
+              <div>
+                <h3>Country: <span className="bold-text">{this.state.clubData.strCountry}</span></h3>
+              </div>
+              <div>
+                <h3>Stadium Name: <span className="bold-text">{this.state.clubData.strStadium}</span></h3>
+              </div>
             </div>
           </div>
         </div>
@@ -78,10 +81,16 @@ export default class Club extends React.Component {
         <section id="player-card-section">
           {this.state.players
             && this.state.players.map(player => (
-              <div className="small-logo" key={player.idPlayer}>
-                <Link to={`/Player/${player.idPlayer}`}>
-                  <img src={player.strThumb} alt={player.strPlayer} />
-                </Link>
+              <div className="player-card-box" key={player.idPlayer}>
+                <div className="small-logo" >
+                  <Link to={`/Player/${player.idPlayer}`}>
+                    {player.strThumb
+                      ? <img src={player.strThumb} alt={player.strPlayer} />
+                      : <img src="https://www.thesun.co.uk/wp-content/uploads/2018/06/NINTCHDBPICT000376001692.jpg" alt="not found" />}
+
+                    <p className="small-logo-name">{player.strPlayer}</p>
+                  </Link>
+                </div>
               </div>
             ))}
         </section>
