@@ -27,10 +27,9 @@ export default class Player extends React.Component {
 
           <div className="player-img">
             {this.state.playerData.strCutout
-              ? <img src={this.state.playerData.strCutout} alt="" />
-              : this.state.playerData.strThumb
-                ? <img src={this.state.playerData.strThumb} alt="" />
-                : < img src="https://www.thesun.co.uk/wp-content/uploads/2018/06/NINTCHDBPICT000376001692.jpg" alt="not found" />}
+              ? <img src={this.state.playerData.strCutout} alt={this.state.playerData.strPlayer} />
+              : <img src={this.state.playerData.strThumb} alt={this.state.playerData.strPlayer} />
+            }
           </div>
           <div className="player-bio">
             <div>

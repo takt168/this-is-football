@@ -4,7 +4,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <small>&copy; 2019 - Tak Tsukamoto</small>
+      <p>&copy; 2019 - Tak Tsukamoto</p>
     </footer>
   );
 }
