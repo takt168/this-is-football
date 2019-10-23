@@ -43,9 +43,15 @@ export default class Club extends React.Component {
       <section id="club-section">
 
         <img src={this.state.clubData.strTeamBanner} alt={this.state.clubData.strTeamBadge} />
+        <Social
+          strFacebook={this.state.clubData.strFacebook}
+          strTwitter={this.state.clubData.strTwitter}
+          strInstagram={this.state.clubData.strInstagram}
+          strYoutube={this.state.clubData.strYoutube}
+        />
         <div className="id-section">
           <img src={this.state.clubData.strTeamJersey} alt={this.state.clubData.strTeamJersey} />
-          <div className="info-section">
+          <div>
             <div>
               <h3>{this.state.clubData.strTeam}</h3>
             </div>
@@ -63,56 +69,11 @@ export default class Club extends React.Component {
             <div>
               <p>Stadium Name: <span className="bold-text">{this.state.clubData.strStadium}</span></p>
             </div>
-            <Social
-              strFacebook={this.state.clubData.strFacebook}
-              strTwitter={this.state.clubData.strTwitter}
-              strInstagram={this.state.clubData.strInstagram}
-              strYoutube={this.state.clubData.strYoutube}
-            />
-
           </div>
         </div>
 
 
 
-
-
-
-        <h1>Last 5 Matches</h1>
-        <div className="league-prev-matches-table">
-          <div className="match-table-item">Date</div>
-          <div className="match-table-item">Home</div>
-          <div className="match-table-item"></div>
-          <div className="match-table-item"></div>
-          <div className="match-table-item">Away</div>
-          {this.state.lastGames.map(games => (
-            <React.Fragment key={games.idEvent}>
-              <div className="match-table-item">{games.dateEvent}</div>
-              <div className="match-table-item">{games.strHomeTeam}</div>
-              <div className="match-table-item">{games.intHomeScore}</div>
-              <div className="match-table-item">{games.intAwayScore}</div>
-              <div className="match-table-item">{games.strAwayTeam}</div>
-            </React.Fragment>
-          ))}
-        </div>
-
-        {this.state.nextGames && <>
-          <h1>Next 5 Matches</h1>
-          <div className="matches-table">
-            <div className="match-table-item">Date</div>
-            <div className="match-table-item">Home</div>
-            <div className="match-table-item">Away</div>
-            <div className="match-table-item">Time (GMT)</div>
-            {this.state.nextGames.map(games => (
-              <React.Fragment key={games.idEvent}>
-                <div className="match-table-item">{games.dateEvent}</div>
-                <div className="match-table-item">{games.strHomeTeam}</div>
-                <div className="match-table-item">{games.strAwayTeam}</div>
-                <div className="match-table-item">{games.strTime}</div>
-              </React.Fragment>
-            ))}
-          </div>
-        </>}
         {this.state.players && <h1>Featured Players/Manager:</h1>}
         <section id="player-card-section">
           {this.state.players
@@ -124,6 +85,49 @@ export default class Club extends React.Component {
               </div>
             ))}
         </section>
+
+
+
+
+        <div className="matches-section">
+          <div className="matches-sub-section">
+
+            <h2>Last 5 Matches</h2>
+            <div className="league-prev-matches-table">
+              <div className="match-table-header">Date</div>
+              <div className="match-table-header">Home</div>
+              <div className="match-table-header">Score</div>
+              <div className="match-table-header">Away</div>
+              {this.state.lastGames.map(games => (
+                <React.Fragment key={games.idEvent}>
+                  <div className="match-table-item">{games.dateEvent}</div>
+                  <div className="match-table-item">{games.strHomeTeam}</div>
+                  <div className="match-table-item">{games.intHomeScore} - {games.intAwayScore}</div>
+                  <div className="match-table-item">{games.strAwayTeam}</div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <div className="matches-sub-section">
+            {this.state.nextGames && <>
+              <h2>Next 5 Matches</h2>
+              <div className="matches-table">
+                <div className="match-table-header">Date</div>
+                <div className="match-table-header">Home</div>
+                <div className="match-table-header">Away</div>
+                <div className="match-table-header">Time (GMT)</div>
+                {this.state.nextGames.map(games => (
+                  <React.Fragment key={games.idEvent}>
+                    <div className="match-table-item">{games.dateEvent}</div>
+                    <div className="match-table-item">{games.strHomeTeam}</div>
+                    <div className="match-table-item">{games.strAwayTeam}</div>
+                    <div className="match-table-item">{games.strTime}</div>
+                  </React.Fragment>
+                ))}
+              </div>
+            </>}
+          </div>
+        </div>
 
       </section >
     );
