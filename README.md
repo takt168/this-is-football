@@ -71,3 +71,10 @@ The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that
 
 **ISSUE**: 2 prominent leagues (La Liga and MLS) wasn't returned in API call for all leagues due to free API limit of 50 records.
 **RESOLUTION**: In the api heler function, I made 2 additional API calls to get those 2 leagues and then append the results of all the API calls into one array and they sort them by league name.
+
+**ISSUE**: On some pages with a lot of content, the page would load in the middle of the page, not at the top.
+**RESOLUTION**: Thanks to Brian and Shay, who suggested to add the following code before the return statment in the component.
+```
+ window.scrollTo(0, 0)
+ ```
+ before the return statment in the component.

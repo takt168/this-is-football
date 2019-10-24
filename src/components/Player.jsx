@@ -22,6 +22,7 @@ export default class Player extends React.Component {
   }
 
   render() {
+    window.scrollTo(0, 0);
     return (
       <section className="player-section">
 

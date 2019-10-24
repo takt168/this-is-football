@@ -23,8 +23,8 @@ header {
 }
 
 #header-img {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   padding-left: 10px;
   object-fit: cover;
   -webkit-transition: -webkit-transform 1s ease-in-out;
@@ -124,15 +124,16 @@ footer p {
 
 .league-prev-matches-table {
   display: grid;
-  grid-template-columns: 90px 150px min-content 150px;
+  grid-template-columns: 90px 175px min-content 175px;
 }
+
 .league-table {
   display: grid;
   grid-template-columns: min-content 200px min-content min-content min-content 
                          min-content min-content min-content min-content min-content;
   background-color: gray; opacity: 0.95;
-
 }
+
 .match-table-header {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -208,6 +209,7 @@ footer p {
 .bold-text {
   font-weight: bold;
 }
+
 .social-tag-div {
   display:flex;
   margin: 10px 0 10px 20px;
@@ -290,4 +292,41 @@ footer p {
     overflow-y: hidden;
     max-height: none;
   }   
+  .league-prev-matches-table {
+    grid-template-columns: 80px 118px min-content 118px;
+  }
+ 
+  .player-card {
+    background-color: gray; opacity: 0.95;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "pic bio"
+      "pic bio"
+      "desc desc";
+      border: 1px solid black;
+      border-radius: 20px;
+  }
+  .social-logo-div {
+    height: 15px;
+    width: 15px;
+    margin-right: 2px;
+
+  }
+
+  .social-tag-div {
+    display:flex;
+    margin: 5px 0;
+  }
+  #league-info {
+    margin: 0 10px;
+    }
+ 
+    .league-table {
+      grid-template-columns: min-content 80px min-content min-content min-content 
+                             min-content min-content min-content min-content min-content;    
+    }
+    
 }

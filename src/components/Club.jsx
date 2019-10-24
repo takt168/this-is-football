@@ -38,8 +38,8 @@ export default class Club extends React.Component {
   }
 
   render() {
+    window.scrollTo(0, 0);
     return (
-
 
       <section id="club-section">
 

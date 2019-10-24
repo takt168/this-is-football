@@ -30,97 +30,77 @@ export const getAllFootballLeagues = async () => {
   for (let i = 0; i < results.length; i++) {
     (results[i].strBadge) && newArray.push(results[i]);
   }
-
-  console.log(newArray.length);
-
   return newArray.sort(sortByLeagueName);
 }
 
 export const getTodaysGames = async () => {
-  console.log("In getTodaysGames()");
   return await getGamesByDate(formatDate(new Date()));
 }
 
 export const getTomorrowsGames = async () => {
-  console.log("In getTomorrowsGames()" + formatDate(tomorrowsDate()));
   return await getGamesByDate(formatDate(tomorrowsDate()));
 }
 
 export const getSaturdayGames = async () => {
-  console.log("In getSaturdayGames()" + formatDate(saturdayDate()));
   return await getGamesByDate(formatDate(saturdayDate()));
 }
 
 export const getSundayGames = async () => {
-  console.log("In getSundayGames()" + formatDate(sundayDate()));
   return await getGamesByDate(formatDate(sundayDate()));
 }
 
 export const getGamesByDate = async (date) => {
   //dateformat for API call is yyyy-mm-dd
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventsday.php?d=${date}&s=Soccer`);
-  console.log(response.data.events);
   return response.data.events;
 }
 
 export const getLeagueData = async (idLeague) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${idLeague}`);
-  console.log(response.data.leagues[0]);
   return response.data.leagues[0];
 }
 
 export const getAllClubsInLeague = async (idLeague) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${idLeague}`);
-  console.log(response.data.teams);
   return response.data.teams;
 }
 
 export const getLastFifteenGamesForLeague = async (idLeague) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${idLeague}`);
-  console.log(response.data.events);
   return response.data.events;
 }
 
 export const getNextFifteenGamesForLeague = async (idLeague) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=${idLeague}`);
-  console.log(response.data.events);
   return response.data.events;
 }
 
 export const getLeagueTable = async (idLeague) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${idLeague}&s=1920`);
-  console.log(response.data.table);
   return response.data.table;
 }
 
 export const getClubData = async (idTeam) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`);
-  console.log(response.data.teams[0]);
   return response.data.teams[0];
 }
 
 export const getAllPlayersInClub = async (idTeam) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${idTeam}`);
-  console.log(response.data.player);
   return response.data.player;
 }
 
 export const getLastFiveGamesForClub = async (idTeam) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=${idTeam}`);
-  console.log(response.data.results);
   return response.data.results;
 }
 
 export const getNextFiveGamesForClub = async (idTeam) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${idTeam}`);
-  console.log(response.data.events);
   return response.data.events;
 }
 
-
-
 export const getPlayerData = async (idPlayer) => {
   const response = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=${idPlayer}`);
-  console.log(response.data.players[0]);
   return response.data.players[0];
 }
