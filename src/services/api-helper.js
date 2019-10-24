@@ -6,7 +6,7 @@ export const getAllFootballLeagues = async () => {
   let response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer");
   let results = response.data.countrys;
   let newArray = [];
-  //loop through array and remove objects with no badge
+  //loop through array and remove objects with no badge or objects in API that aren't club competitions
   for (let i = 0; i < results.length; i++) {
     (results[i].strBadge)
       && (results[i].strLeague !== 'UEFA Nations League')
@@ -16,14 +16,14 @@ export const getAllFootballLeagues = async () => {
       && newArray.push(results[i]);
   }
 
-  // get MLS
+  // get MLS, which doesn't come back in API call, probably due to free api limit of 50 items
   response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346");
   results = response.data.leagues;
   //loop through array and remove objects with no badge
   for (let i = 0; i < results.length; i++) {
     (results[i].strBadge) && newArray.push(results[i]);
   }
-  // get La Liga
+  // get La Liga, which doesn't come back in API call, probably due to free api limit of 50 items
   response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4335");
   results = response.data.leagues;
   //loop through array and remove objects with no badge

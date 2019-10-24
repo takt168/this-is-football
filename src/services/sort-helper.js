@@ -1,3 +1,4 @@
+// sort/compare function based off examples from sitepoint.com and stackoverflow
 export function sortByLeagueName(a, b) {
   const itemA = a.strLeague;
   const itrmB = b.strLeague;

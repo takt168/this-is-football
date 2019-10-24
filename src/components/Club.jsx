@@ -86,9 +86,10 @@ export default class Club extends React.Component {
                 <div className="small-logo" >
                   <Link to={`/Player/${player.idPlayer}`}>
                     {player.strThumb
-                      ? <img src={player.strThumb + "/preview"} alt={player.strPlayer} />
-                      : <img src={player.strCutout + "/preview"} alt={player.strPlayer} />}
-
+                      ? <img src={player.strThumb + "/preview"} alt="" />
+                      : player.strCutout
+                        ? < img src={player.strCutout + "/preview"} alt="" />
+                        : < img src="https://www.itftennis.com/paralympics/assets/img/placeholder-profile-male.jpg" alt="" />}
                     <p className="small-logo-name">{player.strPlayer}</p>
                   </Link>
                 </div>

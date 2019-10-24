@@ -1,4 +1,4 @@
-# This Is Football
+# Club Football Central
 
 ### The beautiful game?!?
 
@@ -40,65 +40,34 @@ The [Sports DB API] (https://www.thesportsdb.com/api.php) is a freemium API that
 
 
 ###PostMVP
-* Hamburger menu
-* Embed social links on page.
+* Add social links on page.
 * Add videos content.  Sports DB API only provides videos for paid subscribers, so hit a second API and pull back relevant videos based on the page they are on.
-* Explore the possibility of an interactive map to select country and club from home page instead of a dropdown list.
-
+* Add Search functionality so users can go directly to a league, team or player page
 
 ## React Component Hierarchy
 ```
 <App />
     <Header />
-    <main>
-      <Schedule /> //page with schedule info
-      <League />   //page with select league
-      <Club />     //page with selected club
-      <Player />   //page with select player 
-    </main>    
+    <Main />     //main page
+    <League />   //page with selected league
+      <Social>   //section with social media links
+    <Club />     //page with selected club
+      <Social>   //section with social media links
+    <Player />   //page with selected player 
+      <Social>   //section with social media links
     <Footer />
 ```
 
-## Functional Components
-##### Writing out your components and it's descriptions isn't a required part of the proposal but can be helpful.
-
-
-###TBD
-<!--
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
-
-| Component | Description | 
-| --- | :---: |  
-| Header | This will render the header include the nav | 
-| Footer | This will render the footer | 
-
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
--->
 ## Helper Functions
-###TBD.... 
+ Function | Description | 
+| --- | :---: |  
+| formatDate(date) | This will take a date and return it in a yyyy-mm-dd format |
+|tomorrowsDate()|Returns a Date data type with tomorrow's date|
+|saturdayDate()| Returns Saturdays date based on the current system date|
+|sundayDate()| Returns Saturdays date based on the current system date|
 
-## Additional Libraries
-###TBD.... 
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
-```
-//TBD
-```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after the first object in sources {} object
+**ISSUE**: 2 prominent leagues (La Liga and MLS) wasn't returned in API call for all leagues due to free API limit of 50 records.
+**RESOLUTION**: In the api heler function, I made 2 additional API calls to get those 2 leagues and then append the results of all the API calls into one array and they sort them by league name.

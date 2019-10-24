@@ -23,10 +23,18 @@ header {
 }
 
 #header-img {
-  height: 75px;
-  width: 100px;
-  padding-left: 6%;
+  height: 80px;
+  width: 80px;
+  padding-left: 10px;
+  object-fit: cover;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition:         transform 1s ease-in-out;
 }
+#header-img:hover {
+-webkit-transform: rotate(720deg);
+  transform: rotate(720deg);
+}
+
 header img {
   height: 100%;
   width: 100%;
@@ -100,14 +108,14 @@ footer p {
 }
 .league-matches-table {
   display: grid;
-  grid-template-columns: 90px 150px 150px 90px;
+  grid-template-columns: 150px 150px 150px 120px;
   max-height: 400px;
   overflow-y: scroll;
 }
 
 .matches-table {
   display: grid;
-  grid-template-columns: 90px 150px 150px 90px;;
+  grid-template-columns: 150px 150px 150px 120px;
 }
 
 .match-table-item {
@@ -258,4 +266,28 @@ footer p {
 .small-logo-name {
   text-decoration: none;
   color:white;
+}
+
+
+@media screen and (max-width: 530px) {
+  html {
+    font-size: 10px;
+  }
+  .matches-section {
+    display:grid;
+    grid-template-columns: min-content;
+    grid-row-gap: 10px;
+    margin: 10px 0 0 10px;
+  } 
+  .league-matches-table {
+    grid-template-columns: 80px 100px 100px 80px;
+    overflow-y: hidden;
+    max-height: none;
+  }
+  
+  .matches-table {
+    grid-template-columns: 80px 100px 100px 80px;
+    overflow-y: hidden;
+    max-height: none;
+  }   
 }
