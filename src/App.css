@@ -283,14 +283,10 @@ footer p {
   } 
   .league-matches-table {
     grid-template-columns: 80px 100px 100px 80px;
-    overflow-y: hidden;
-    max-height: none;
   }
   
   .matches-table {
     grid-template-columns: 80px 100px 100px 80px;
-    overflow-y: hidden;
-    max-height: none;
   }   
   .league-prev-matches-table {
     grid-template-columns: 80px 118px min-content 118px;
