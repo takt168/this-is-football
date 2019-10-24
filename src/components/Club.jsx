@@ -46,12 +46,6 @@ export default class Club extends React.Component {
         <div id="club-desc">
 
           <img src={this.state.clubData.strTeamBanner} alt={this.state.clubData.strTeamBadge} />
-          <Social
-            strFacebook={this.state.clubData.strFacebook}
-            strTwitter={this.state.clubData.strTwitter}
-            strInstagram={this.state.clubData.strInstagram}
-            strYoutube={this.state.clubData.strYoutube}
-          />
           <div className="id-section">
             <img src={this.state.clubData.strTeamJersey} alt={this.state.clubData.strTeamJersey} />
             <div>
@@ -77,6 +71,12 @@ export default class Club extends React.Component {
         </div>
 
 
+        <Social
+          strFacebook={this.state.clubData.strFacebook}
+          strTwitter={this.state.clubData.strTwitter}
+          strInstagram={this.state.clubData.strInstagram}
+          strYoutube={this.state.clubData.strYoutube}
+        />
 
         {this.state.players && <h1>Featured Players/Manager:</h1>}
         <section id="player-card-section">
@@ -86,8 +86,8 @@ export default class Club extends React.Component {
                 <div className="small-logo" >
                   <Link to={`/Player/${player.idPlayer}`}>
                     {player.strThumb
-                      ? <img src={player.strThumb} alt={player.strPlayer} />
-                      : <img src={player.strCutout} alt={player.strPlayer} />}
+                      ? <img src={player.strThumb + "/preview"} alt={player.strPlayer} />
+                      : <img src={player.strCutout + "/preview"} alt={player.strPlayer} />}
 
                     <p className="small-logo-name">{player.strPlayer}</p>
                   </Link>

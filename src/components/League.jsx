@@ -53,7 +53,7 @@ export default class League extends React.Component {
 
               <div className="small-logo" >
                 <Link to={`/Club/${club.idTeam}`}>
-                  <img src={club.strTeamBadge} alt={club.strTeam} />
+                  <img src={club.strTeamBadge + "/preview"} alt={club.strTeam} />
                   <p className="small-logo-name">{club.strTeam}</p>
                 </Link>
               </div>

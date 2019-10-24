@@ -11,7 +11,7 @@ export default function Main(props) {
             <div className="small-logo" >
               <div className="logo-div">
                 <Link to={`/League/${league.idLeague}`}>
-                  <img src={league.strBadge} alt={league.strLeague} />
+                  <img src={league.strBadge + "/preview"} alt={league.strLeague} />
                   <p className="small-logo-name">{league.strLeague}</p>
                 </Link>
               </div>

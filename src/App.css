@@ -100,14 +100,14 @@ footer p {
 }
 .league-matches-table {
   display: grid;
-  grid-template-columns: 90px 150px 150px min-content;
+  grid-template-columns: 90px 150px 150px 90px;
   max-height: 400px;
   overflow-y: scroll;
 }
 
 .matches-table {
   display: grid;
-  grid-template-columns: 90px 150px 150px min-content;
+  grid-template-columns: 90px 150px 150px 90px;;
 }
 
 .match-table-item {
@@ -120,7 +120,7 @@ footer p {
 }
 .league-table {
   display: grid;
-  grid-template-columns: min-content 150px min-content min-content min-content 
+  grid-template-columns: min-content 200px min-content min-content min-content 
                          min-content min-content min-content min-content min-content;
   background-color: gray; opacity: 0.95;
 
