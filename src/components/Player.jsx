@@ -11,6 +11,7 @@ export default class Player extends React.Component {
       idPlayer: props.idPlayer,
       playerData: []
     }
+
   }
 
   componentDidMount = async () => {
@@ -23,6 +24,7 @@ export default class Player extends React.Component {
   render() {
     return (
       <section className="player-section">
+
         <div className="player-card">
 
           <div className="player-img">
@@ -51,33 +53,9 @@ export default class Player extends React.Component {
               strInstagram={this.state.playerData.strInstagram}
               strYoutube={this.state.playerData.strYoutube}
             />
-
-
-            {/* <div className="social-logo-div">
-              {this.state.playerData.strFacebook
-                && < a href={"http://" + this.state.playerData.strFacebook}
-                  target="_blank"
-                  rel="noopener noreferrer"><img src={facebook} /></a>}
-            </div>
-            <div className="social-logo-div">
-              {this.state.playerData.strTwitter
-                && < a href={"http://" + this.state.playerData.strTwitter}
-                  target="_blank" rel="noopener noreferrer"><img src={twitter} /></a>}
-            </div>
-            <div className="social-logo-div">
-              {this.state.playerData.strInstagram
-                && <a href={"http://" + this.state.playerData.strInstagram}
-                  target="_blank" rel="noopener noreferrer"><img src={instagram} /></a>}
-            </div>
-            <div>
-              {this.state.playerData.strYoutube
-                && <a href={"http://" + this.state.playerData.strYoutube}
-                  target="_blank" rel="noopener noreferrer"><img src={youtube} /></a>}
-            </div>
- */}
           </div>
+          <p id="player-desc"><span className="bold-text">Player Bio: </span>{this.state.playerData.strDescriptionEN}</p>
         </div>
-        <p><span className="bold-text">Player Bio: </span>{this.state.playerData.strDescriptionEN}</p>
 
       </section>
     );

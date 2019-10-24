@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { formatDate, tomorrowsDate, saturdayDate, sundayDate } from './date-helper';
+import { sortByLeagueName } from './sort-helper';
 
 export const getAllFootballLeagues = async () => {
   let response = await axios.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer");
@@ -7,7 +8,12 @@ export const getAllFootballLeagues = async () => {
   let newArray = [];
   //loop through array and remove objects with no badge
   for (let i = 0; i < results.length; i++) {
-    (results[i].strBadge) && newArray.push(results[i]);
+    (results[i].strBadge)
+      && (results[i].strLeague !== 'UEFA Nations League')
+      && (results[i].strLeague !== 'UEFA Cup')
+      && (results[i].strLeague !== 'Copa America')
+      && (results[i].strLeague !== 'FIFA World Cup')
+      && newArray.push(results[i]);
   }
 
   // get MLS
@@ -27,7 +33,7 @@ export const getAllFootballLeagues = async () => {
 
   console.log(newArray.length);
 
-  return newArray;
+  return newArray.sort(sortByLeagueName);
 }
 
 export const getTodaysGames = async () => {

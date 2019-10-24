@@ -3,6 +3,7 @@
   padding:0;
   /* font-family: 'Montserrat', sans-serif; */
   font-family: 'Source Sans Pro', sans-serif;
+  color: white;
 }
 a {
   text-decoration: none;
@@ -13,6 +14,7 @@ body {
 }
 main {
   background-image: url("https://www.wallpaperflare.com/static/782/646/367/aerial-view-green-soccer-wallpaper.jpg");
+  padding-bottom: 20px;
 }
 header {
   display: flex;
@@ -50,12 +52,15 @@ header h1 {
 
 .player-card-box   {
   margin: 5px 5px;
+  padding:10px;
   width: 10%;
   text-align:center;
+  background-color: gray;opacity: 0.95;
 }
+
+
 .player-card-box:hover   {
-  background-color:  black; opacity: 0.7;
-}
+  background-color: orange;opacity: 0.95;}
 
 .league img {
   height: 100%;
@@ -93,10 +98,16 @@ footer p {
   text-shadow: 1.5px 1.5px black;
 
 }
+.league-matches-table {
+  display: grid;
+  grid-template-columns: 90px 150px 150px min-content;
+  max-height: 400px;
+  overflow-y: scroll;
+}
 
 .matches-table {
   display: grid;
-  grid-template-columns: repeat(4,min-content);
+  grid-template-columns: 90px 150px 150px min-content;
 }
 
 .match-table-item {
@@ -105,28 +116,29 @@ footer p {
 
 .league-prev-matches-table {
   display: grid;
-  grid-template-columns: repeat(4,min-content);
+  grid-template-columns: 90px 150px min-content 150px;
 }
 .league-table {
   display: grid;
-  grid-template-columns: repeat(10,min-content);
-  background-color: white; opacity: 0.7;
+  grid-template-columns: min-content 150px min-content min-content min-content 
+                         min-content min-content min-content min-content min-content;
+  background-color: gray; opacity: 0.95;
 
 }
 .match-table-header {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 1px 8px;
   font-weight: 900;
   text-transform: uppercase;
-  background-color: white; opacity: 0.7;
+  background-color: gray; opacity: 0.95;
 }
 
 .match-table-item {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 1px 8px;
-  background-color: white; opacity: 0.7;
+  background-color: gray; opacity: 0.95;
 }
 
 .id-section {
@@ -134,18 +146,19 @@ footer p {
 }
 
 .matches-section {
-  display:flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
+  display:grid;
+  grid-template-columns: min-content min-content;
+  margin: 20px 0 0 20px;
 }
 
+.matches-sub-section {
+  margin-right: 20px;
+}
+  
 .matches-sub-section h2{
-background-color: white; opacity: 0.7;
-}
-
-.matches-sub-section h2 {
+  background-color: gray; opacity: 0.95;
   text-align: center;
-  }
+}
   
 .id-section img {
   width: 25%;
@@ -157,15 +170,31 @@ background-color: white; opacity: 0.7;
 }
 
 .player-img {
-  width: 25%;
-  margin: 30px;
+  grid-area: pic;
 }
 .player-bio {
-  margin: 30px 0;
+  grid-area: bio;
+  margin-left: 20px;
 }
+#player-desc {
+ grid-area: desc;
+ max-height: 350px;
+ overflow-y: auto;
+ color: white;
+}
+
 .player-card {
-display: flex;
-margin: 0 20px 20px 20px;
+  background-color: gray; opacity: 0.95;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "pic bio"
+    "pic bio"
+    "desc desc";
+    border: 1px solid black;
+    border-radius: 50px;
 }
 
 .bold-text {
@@ -173,7 +202,7 @@ margin: 0 20px 20px 20px;
 }
 .social-tag-div {
   display:flex;
-  margin: 10px 0;
+  margin: 10px 0 10px 20px;
 }
 
 .social-logo-div {
@@ -186,18 +215,23 @@ margin: 0 20px 20px 20px;
   background-image: url("https://www.wallpaperflare.com/static/782/646/367/aerial-view-green-soccer-wallpaper.jpg");
 }
 
+#club-section, #league-section {
+  padding-bottom: 20px;
+}
 .player-section {
   color: white;
 }
 .player-section p {
-  background-color: white; opacity: 0.7;
+  background-color: gray; opacity: 0.95;
   color: black;
   
 }
 
 #club-section h1 {
   color: white;
-  text-align: center;
+  background-color: gray; opacity: 0.95;
+  display: inline;
+  margin: 20px;
 }
 
 #league-table-div {
@@ -208,14 +242,16 @@ margin: 0 20px 20px 20px;
 }
 
 #league-table-div h2 {
-  background-color: white; opacity: 0.7;
+  background-color: gray; opacity: 0.95;
 }
 
 .id-section {
   color:white;
 }
 #league-info {
-  background-color: white; opacity: 0.7;
+  background-color: gray; opacity: 0.95;
+  margin: 0 20px;
+  padding: 10px;
   }
 
 

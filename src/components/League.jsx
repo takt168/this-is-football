@@ -43,8 +43,9 @@ export default class League extends React.Component {
     return (
 
       <section id="league-section">
-        <img src={this.state.leagueData.strBanner} alt={this.state.leagueData.strLeague} />
-        {(this.state.leagueData.strBanner === null && <h1>{this.state.leagueData.strLeague}</h1>)}
+        <img src={this.state.leagueData.strBanner} alt="" />
+        {(this.state.leagueData.strBanner === null && <img src={this.state.leagueData.strLogo} alt="" />)
+        }
 
         <section id="club-logo-section">
           {this.state.clubs && this.state.clubs.map(club => (
@@ -80,7 +81,8 @@ export default class League extends React.Component {
         </div>
 
 
-        {this.state.leagueData.idCup === "0" &&
+        {
+          this.state.leagueData.idCup === "0" &&
           this.state.table &&
           <div id="league-table-div">
             <h2>League Table</h2>
@@ -154,7 +156,7 @@ export default class League extends React.Component {
               </div>
             </div>}
         </div >
-      </section>
+      </section >
     );
   };
 }

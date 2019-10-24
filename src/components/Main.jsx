@@ -24,7 +24,7 @@ export default function Main(props) {
 
 
           <h2> TODAY'S MATCHES</h2>
-          <div className="matches-table">
+          <div className="league-matches-table">
             <div className="match-table-header">League Name</div>
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
@@ -42,7 +42,7 @@ export default function Main(props) {
 
         <div className="matches-sub-section">
           <h2> TOMORROW'S MATCHES</h2>
-          <div className="matches-table">
+          <div className="league-matches-table">
             <div className="match-table-header">League Name</div>
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
@@ -62,7 +62,7 @@ export default function Main(props) {
         <div className="matches-sub-section">
 
           <h2> SATURDAY'S MATCHES</h2>
-          <div className="matches-table">
+          <div className="league-matches-table">
             <div className="match-table-header">League Name</div>
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
@@ -79,7 +79,7 @@ export default function Main(props) {
         </div>
         <div className="matches-sub-section">
           <h2> SUNDAY'S MATCHES</h2>
-          <div className="matches-table">
+          <div className="league-matches-table">
             <div className="match-table-item">League Name</div>
             <div className="match-table-item">Home</div>
             <div className="match-table-item">Away</div>

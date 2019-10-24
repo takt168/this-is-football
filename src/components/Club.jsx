@@ -20,6 +20,7 @@ export default class Club extends React.Component {
       lastGames: [],
       nextGames: []
     }
+
   }
 
   componentDidMount = async () => {
@@ -86,7 +87,7 @@ export default class Club extends React.Component {
                   <Link to={`/Player/${player.idPlayer}`}>
                     {player.strThumb
                       ? <img src={player.strThumb} alt={player.strPlayer} />
-                      : <img src="https://www.thesun.co.uk/wp-content/uploads/2018/06/NINTCHDBPICT000376001692.jpg" alt="not found" />}
+                      : <img src={player.strCutout} alt={player.strPlayer} />}
 
                     <p className="small-logo-name">{player.strPlayer}</p>
                   </Link>
