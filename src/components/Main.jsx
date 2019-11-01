@@ -29,7 +29,7 @@ export default function Main(props) {
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
             <div className="match-table-header">Time (GMT)</div>
-            {props.todaysGames.map(games => (
+            {props.todaysGames && props.todaysGames.map(games => (
               <React.Fragment key={games.idEvent}>
                 <div className="match-table-item">{games.strLeague}</div>
                 <div className="match-table-item">{games.strHomeTeam}</div>
@@ -47,7 +47,7 @@ export default function Main(props) {
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
             <div className="match-table-header">Time (GMT)</div>
-            {props.tomorrowsGames.map(games => (
+            {props.tomorrowsGames && props.tomorrowsGames.map(games => (
               <React.Fragment key={games.idEvent}>
                 <div className="match-table-item">{games.strLeague}</div>
                 <div className="match-table-item">{games.strHomeTeam}</div>
@@ -67,7 +67,7 @@ export default function Main(props) {
             <div className="match-table-header">Home</div>
             <div className="match-table-header">Away</div>
             <div className="match-table-header">Time (GMT)</div>
-            {props.saturdayGames.map(games => (
+            {props.saturdayGames && props.saturdayGames.map(games => (
               <React.Fragment key={games.idEvent}>
                 <div className="match-table-item">{games.strLeague}</div>
                 <div className="match-table-item">{games.strHomeTeam}</div>
@@ -84,7 +84,7 @@ export default function Main(props) {
             <div className="match-table-item">Home</div>
             <div className="match-table-item">Away</div>
             <div className="match-table-item">Time (GMT)</div>
-            {props.sundayGames.map(games => (
+            {props.sundayGames && props.sundayGames.map(games => (
               <React.Fragment key={games.idEvent}>
                 <div className="match-table-item">{games.strLeague}</div>
                 <div className="match-table-item">{games.strHomeTeam}</div>
