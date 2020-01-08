@@ -25,7 +25,7 @@ export default class Club extends React.Component {
 
   componentDidMount = async () => {
     const clubData = await getClubData(this.state.idTeam);
-    const players = await getAllPlayersInClub(this.state.idTeam);
+    const players = [];//await getAllPlayersInClub(this.state.idTeam);
     const lastGames = await getLastFiveGamesForClub(this.state.idTeam);
     const nextGames = await getNextFiveGamesForClub(this.state.idTeam);
 
@@ -78,7 +78,7 @@ export default class Club extends React.Component {
           strYoutube={this.state.clubData.strYoutube}
         />
 
-        {this.state.players && <h1>Featured Players/Manager:</h1>}
+        {/* {this.state.players && <h1>Featured Players/Manager:</h1>}
         <section id="player-card-section">
           {this.state.players
             && this.state.players.map(player => (
@@ -95,7 +95,7 @@ export default class Club extends React.Component {
                 </div>
               </div>
             ))}
-        </section>
+        </section> */}
 
 
 

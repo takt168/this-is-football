@@ -19,7 +19,7 @@ export default function Main(props) {
           </div>
         ))}
       </section>
-      <section className="matches-section">
+      {/* <section className="matches-section">
         <div className="matches-sub-section">
 
 
@@ -94,7 +94,7 @@ export default function Main(props) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

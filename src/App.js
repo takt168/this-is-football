@@ -30,10 +30,10 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     const leagues = await getAllFootballLeagues();
-    const todaysGames = await getTodaysGames();
-    const tomorrowsGames = await getTomorrowsGames();
-    const saturdayGames = await getSaturdayGames();
-    const sundayGames = await getSundayGames();
+    const todaysGames = [];//await getTodaysGames();
+    const tomorrowsGames = [];//await getTomorrowsGames();
+    const saturdayGames = [];//await getSaturdayGames();
+    const sundayGames = [];//await getSundayGames();
 
     this.setState({
       leagues,
